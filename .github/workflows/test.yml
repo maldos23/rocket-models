@@ -1,0 +1,21 @@
+name: Ejecutar tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Usar Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Instalar dependencias
+      run: npm ci
+
+    - name: Ejecutar tests
+      run: npm test
