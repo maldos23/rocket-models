@@ -1,0 +1,23 @@
+{
+  "name": "@rocket/rocket-models",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec > test-results.txt"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "joi": "^17.13.1",
+    "mongoose": "^8.4.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.4.0",
+    "sinon": "^18.0.0"
+  }
+}
