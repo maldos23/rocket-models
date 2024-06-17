@@ -1,5 +1,7 @@
 import initPostgress from "./db/posgress.js";
 import initMongo from "./db/mongo.js";
+import Product from "./models/mongo/product.model.js";
+import Account from "./models/mongo/account.model.js";
 
 // ENUMS
 const DATABASE_VARIANTS = { MONGO: "mongo", POSTGRES: "postgres" };
@@ -29,9 +31,16 @@ function initDatabase(URI = null, { variant = "mongo" } = {}) {
   }
 }
 
-export const rocket = {
-  db: {
-    initDatabase,
-    config: { types: DATABASE_VARIANTS },
+const db = {
+  initDatabase,
+  config: { types: DATABASE_VARIANTS },
+};
+
+const models = {
+  mongo: {
+    Product,
+    Account,
   },
 };
+
+export { db, models };
